@@ -4,6 +4,7 @@ import { devices } from "theme/device";
 import Header from "components/molecules/Header/Header";
 import DateSection from "components/molecules/DateSection/DateSection";
 import WeatherDetailsSection from "components/organisms/WeatherDetailsSection/WeatherDetailsSection";
+import WeatherForecastSection from "components/molecules/WeatherForecastSection/WeatherForecastSection";
 
 const StyledMain = styled.main`
     width: 300px;
@@ -11,7 +12,7 @@ const StyledMain = styled.main`
     position: relative;
     margin: 10px;
     display: grid;
-    grid-template-rows: 15% auto 15%;
+    grid-template-rows: 15% 50% 20% 15%;
 
     @media ${devices.tablet} {
     height: 80vh;
@@ -41,6 +42,7 @@ const DetailsView = () => (
             pressure={1050}
             description='light rain'
         />
+        <WeatherForecastSection />
         <DateSection />
     </StyledMain>
 );
