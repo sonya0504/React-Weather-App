@@ -22,10 +22,10 @@ const StyledDescription = styled(Description)`
 `;
 
 
-const DateSection = () => (
+const DateSection = ({ clock, day }) => (
     <StyledWrapper>
-        <StyledHeading as='h1'>23:00</StyledHeading>
-        <StyledDescription>Saturday, 30 December</StyledDescription>
+        <StyledHeading as='h1'>{clock}</StyledHeading>
+        <StyledDescription>{day}</StyledDescription>
     </StyledWrapper>
 );
 

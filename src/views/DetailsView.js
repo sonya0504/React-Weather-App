@@ -22,7 +22,7 @@ const StyledMain = styled.main`
     }
 `;
 
-const DetailsView = () => (
+const DetailsView = ({ clock, day }) => (
     <StyledMain>
         <Header 
             cityName='Toronto'
@@ -43,7 +43,7 @@ const DetailsView = () => (
             description='light rain'
         />
         <WeatherForecastSection />
-        <DateSection />
+        <DateSection clock={clock} day={day} />
     </StyledMain>
 );
 

@@ -22,7 +22,9 @@ const StyledSpan = styled.span`
     color: ${({ theme }) => theme.colors.accent};
 `;
 
-const MainView = () => (
+const MainView = ({ time }) => {
+
+    return (
     <StyledSection>
         <StyledHeading big>
             Enter the <StyledSpan>city</StyledSpan> where you want to check the <StyledSpan>weather</StyledSpan>
@@ -30,5 +32,6 @@ const MainView = () => (
         <Form />
     </StyledSection>
 );
+    }
 
 export default MainView;
