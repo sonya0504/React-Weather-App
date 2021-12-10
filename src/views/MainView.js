@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import AppContext from "context";
 import { devices } from "theme/device";
 import Heading from "components/atoms/Heading/Heading";
 import Form from "components/molecules/Form/Form";
@@ -22,15 +23,21 @@ const StyledSpan = styled.span`
     color: ${({ theme }) => theme.colors.accent};
 `;
 
-const MainView = ({ time }) => {
+const MainView = () => {
 
     return (
-    <StyledSection>
-        <StyledHeading big>
-            Enter the <StyledSpan>city</StyledSpan> where you want to check the <StyledSpan>weather</StyledSpan>
-        </StyledHeading>
-        <Form />
-    </StyledSection>
+    <AppContext.Consumer>
+        {(context) => (
+            <StyledSection>
+                {(context.errorMessageCurrent || context.errorMessageForecast) ? (
+                    <StyledHeading big>I have not found such a <StyledSpan>city</StyledSpan>. Try to write down other</StyledHeading>
+                    ) : (
+                    <StyledHeading big>Enter the <StyledSpan>city</StyledSpan> where you want to check the <StyledSpan>weather</StyledSpan></StyledHeading>
+                )}
+                <Form />
+            </StyledSection>
+        )}
+    </AppContext.Consumer>
 );
     }
 

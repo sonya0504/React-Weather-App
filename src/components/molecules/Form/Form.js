@@ -1,5 +1,7 @@
 import React from "react";
+import { Navigate } from 'react-router-dom';
 import styled from "styled-components";
+import AppContext from "context";
 import Input from "components/atoms/Input/Input";
 import Button from "components/atoms/Button/Button";
 
@@ -14,10 +16,16 @@ const StyledForm = styled.form`
 `;
 
 const Form = () => (
-    <StyledForm>
-        <Input placeholder='enter location' />
-        <Button>check</Button>
-    </StyledForm>
+
+    <AppContext.Consumer>
+        {(context) => (
+            <StyledForm onSubmit={context.getWeather}>
+                <Input placeholder='enter location' name='city' onChange={context.getCityName} />
+                {context.redirect ? <Navigate to='/details'/> : null}
+                <Button type='submit'>check</Button>
+            </StyledForm>
+        )}
+    </AppContext.Consumer>
 );
 
 export default Form;

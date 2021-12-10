@@ -1,4 +1,5 @@
 import React from 'react';
+import AppContext from 'context';
 import styled from 'styled-components';
 import Heading from 'components/atoms/Heading/Heading';
 import Description from 'components/atoms/Description/Description';
@@ -22,11 +23,15 @@ const StyledDescription = styled(Description)`
 `;
 
 
-const DateSection = ({ clock, day }) => (
-    <StyledWrapper>
-        <StyledHeading as='h1'>{clock}</StyledHeading>
-        <StyledDescription>{day}</StyledDescription>
-    </StyledWrapper>
+const DateSection = () => (
+    <AppContext.Consumer>
+        {(context) => (
+            <StyledWrapper>
+                <StyledHeading as='h1'>{context.clock}</StyledHeading>
+                <StyledDescription>{context.day}</StyledDescription>
+            </StyledWrapper>
+        )}
+    </AppContext.Consumer>
 );
 
 export default DateSection;

@@ -8,8 +8,6 @@ import WeatherComponent from 'components/atoms/WeatherComponent/WeatherComponent
 import feelsLikeIcon from 'assets/icons/feelsLike.svg';
 import humidityIcon from 'assets/icons/humidity.svg';
 import pressureIcon from 'assets/icons/pressure.svg';
-import sunriseIcon from 'assets/icons/sunrise.svg';
-import sunsetIcon from 'assets/icons/sunset.svg';
 import tempMaxIcon from 'assets/icons/tempMax.svg';
 import tempMinIcon from 'assets/icons/tempMin.svg';
 import windSpeedIcon from 'assets/icons/windSpeed.svg';
@@ -52,8 +50,6 @@ const WeatherDetailsSection = ({
     description,
     feelsLike, 
     humidity,
-    sunset, 
-    sunrise, 
     temp,  
     tempMax, 
     tempMin, 
@@ -74,14 +70,6 @@ const WeatherDetailsSection = ({
             icon: pressureIcon,
             value: `pressure ${pressure}hPa`,
         },
-        sunrise: {
-            icon: sunriseIcon,
-            value: `sunrise ${sunrise}`,
-        },
-        sunset: {
-            icon: sunsetIcon,
-            value: `sunset ${sunset}`,
-        },
         tempMax: {
             icon: tempMaxIcon,
             value: `max ${tempMax}\u{2103}`,
@@ -92,7 +80,7 @@ const WeatherDetailsSection = ({
         },
         windSpeed: {
             icon: windSpeedIcon,
-            value: `wind ${windSpeed}km/h`,
+            value: `wind ${windSpeed}m/s`,
         }
     }
 
@@ -110,14 +98,8 @@ const WeatherDetailsSection = ({
                     </div>
                 </StyledInformationWrapper>
                 <StyledInformationWrapper>
-                    <div>
-                        <WeatherComponent image={weatherConditions.sunrise.icon} value={weatherConditions.sunrise.value} />
-                        <WeatherComponent image={weatherConditions.sunset.icon} value={weatherConditions.sunset.value} />
-                    </div>
-                    <div>
-                        <WeatherComponent image={weatherConditions.windSpeed.icon} value={weatherConditions.windSpeed.value} />
-                        <WeatherComponent image={weatherConditions.pressure.icon} value={weatherConditions.pressure.value} />
-                    </div>
+                    <WeatherComponent image={weatherConditions.windSpeed.icon} value={weatherConditions.windSpeed.value} />
+                    <WeatherComponent image={weatherConditions.pressure.icon} value={weatherConditions.pressure.value} />
                 </StyledInformationWrapper>
         </StyledWrapper>
         );
@@ -125,14 +107,12 @@ const WeatherDetailsSection = ({
 
 WeatherDetailsSection.propTypes = {
     description: PropTypes.string.isRequired,
-    feelsLike: PropTypes.number.isRequired,
+    feelsLike: PropTypes.string.isRequired,
     humidity: PropTypes.number.isRequired,
     pressure: PropTypes.number.isRequired,
-    sunrise: PropTypes.string.isRequired,
-    sunset: PropTypes.string.isRequired,
-    temp: PropTypes.number.isRequired,
-    tempMax: PropTypes.number.isRequired,
-    tempMin: PropTypes.number.isRequired,
+    temp: PropTypes.string.isRequired,
+    tempMax: PropTypes.string.isRequired,
+    tempMin: PropTypes.string.isRequired,
     windSpeed: PropTypes.number.isRequired,
 }
 

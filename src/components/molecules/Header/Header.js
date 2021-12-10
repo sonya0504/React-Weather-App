@@ -4,7 +4,9 @@ import { devices } from "theme/device";
 import WeatherImage from "components/atoms/WeatherImage/WeatherImage";
 import Heading from "components/atoms/Heading/Heading";
 import Description from "components/atoms/Description/Description";
+import Button from "components/atoms/Button/Button";
 import markerIcon from 'assets/icons/marker.svg';
+import backIcon from 'assets/icons/back.svg';
 
 const StyledCityName = styled.header`
     width: 100%;
@@ -25,6 +27,17 @@ const StyledWeatherImage = styled(WeatherImage)`
     display: block;
 `;
 
+const StyledButton = styled(Button)`
+background-color: transparent;
+    background-image: url(${backIcon});
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+`;
+
 const StyledDescription = styled(Description)`
     margin-top: 0;
     margin-bottom: 0;
@@ -41,16 +54,17 @@ const StyledHeading = styled(Heading)`
     }
 `;
 
-const Header = ({ cityName, mainDescription, imgSrc, imgAlt }) => (
+const Header = ({ cityName, mainDescription, imgSrc, imgAlt, goBack }) => (
     <StyledCityName> 
-    <StyledImageWrapper>
-        <StyledWeatherImage imgSrc={imgSrc} imgAlt={imgAlt} />
-        <StyledDescription>{mainDescription}</StyledDescription>
-    </StyledImageWrapper>
-    <StyledHeading>{cityName}</StyledHeading>
-    <StyledImageWrapper>
-        <StyledWeatherImage imgSrc={markerIcon} imgAlt='change city' />
-    </StyledImageWrapper>
+        <StyledButton />
+        <StyledImageWrapper>
+            <StyledWeatherImage imgSrc={imgSrc} imgAlt={imgAlt} />
+            <StyledDescription>{mainDescription}</StyledDescription>
+        </StyledImageWrapper>
+        <StyledHeading>{cityName}</StyledHeading>
+        <StyledImageWrapper>
+            <StyledWeatherImage imgSrc={markerIcon} imgAlt='change city' />
+        </StyledImageWrapper>
     </StyledCityName>
 );
 
