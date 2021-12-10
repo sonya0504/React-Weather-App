@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/static/js/main.06cd781a.chunk.js",
+    "main.js.map": "/static/js/main.06cd781a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.65c4b6df.js",
+    "runtime-main.js.map": "/static/js/runtime-main.65c4b6df.js.map",
+    "static/js/2.8a4857f9.chunk.js": "/static/js/2.8a4857f9.chunk.js",
+    "static/js/2.8a4857f9.chunk.js.map": "/static/js/2.8a4857f9.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.8a4857f9.chunk.js.LICENSE.txt": "/static/js/2.8a4857f9.chunk.js.LICENSE.txt",
+    "static/media/back.174166da.svg": "/static/media/back.174166da.svg",
+    "static/media/feelsLike.2c9857d9.svg": "/static/media/feelsLike.2c9857d9.svg",
+    "static/media/humidity.382f5deb.svg": "/static/media/humidity.382f5deb.svg",
+    "static/media/marker.8f2b492c.svg": "/static/media/marker.8f2b492c.svg",
+    "static/media/pressure.208c4c4c.svg": "/static/media/pressure.208c4c4c.svg",
+    "static/media/tempMax.b70fc12e.svg": "/static/media/tempMax.b70fc12e.svg",
+    "static/media/tempMin.b0a8abe9.svg": "/static/media/tempMin.b0a8abe9.svg",
+    "static/media/windSpeed.fce22008.svg": "/static/media/windSpeed.fce22008.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.65c4b6df.js",
+    "static/js/2.8a4857f9.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.06cd781a.chunk.js"
+  ]
+}
